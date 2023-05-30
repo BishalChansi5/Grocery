@@ -21,7 +21,7 @@
 }
 
 .goback{
-  background-color: var(--col1);
+  background-color:hsl(187, 85%, 43%);;
   color: white;
   border: none;
   outline: none;
