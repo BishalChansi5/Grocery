@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import img1 from '../../ASSETS/img1.jpg'
-import img2 from '../../ASSETS/img2.jpg'
-import img3 from '../../ASSETS/img3.jpg'
+import img2 from '../../ASSETS/img(1).jpg'
+import img1 from '../../ASSETS/dairy1.jpg'
+import img3 from '../../ASSETS/dairy2.jpg'
 import Navbar from '../../COMPONENTS/Navbar/Navbar'
 import './ProductPage.css'
+import Footer1 from '../../COMPONENTS/Footer/Footer1'
+import Footer2 from '../../COMPONENTS/Footer/Footer2'
 
 const ProductPage = () => {
   const {prodid} = useParams()
@@ -12,6 +14,7 @@ const ProductPage = () => {
   const [productdata, setproductdata] = React.useState([])
   const [activeimg, setactiveimg] = React.useState({})
   const [count, setcount] = React.useState(1)
+  const [showreview, setshowreview] = React.useState(false)
 
   const getproductdatabyid = async () =>{
       let temp ={
@@ -20,8 +23,8 @@ const ProductPage = () => {
         "Data":[
           {
             "ProductId":1,
-            "ProductName": "Product 1",
-            "ProductDescription":"Product 1 Description",
+            "ProductName": "Dairy Milk",
+            "ProductDescription":"Cadbury Dairy Milk is a British brand of milk chocolate manufactured by Cadbury. It was introduced in the United Kingdom in June 1905 and now consists of a number of products. Every product in the Dairy Milk line is made with exclusively milk chocolate. In 2014, Dairy Milk was ranked the best-selling chocolate bar in the UK.According to a 2007 report in The New York Times, a British bar contained (in order) milk, sugar, cocoa mass, cocoa butter, vegetable fat and emulsifiers, whilst the American version manufactured by Hershey started its list of ingredients with sugar. It also listed lactose, emulsifier soy lecithin, and natural and artificial flavorings",
             "ProductImage":[
               {
                 id:1,
@@ -62,6 +65,32 @@ const ProductPage = () => {
                     "ProductShippingReturnPolicyType": "Days",
                     "ProductShippingReturnPolicyDescription": "Return Policy Description 1",
                     "ProductShippingReturnPolicyDescriptionType": "Days",
+                    "ProductReviews": [
+                      {
+                          "ReviewId": 1,
+                          "Name": "Bishal Chansi",
+                          "Email": "",
+                          "Rating": 5,
+                          "Date": "2021-08-01",
+                          "Review": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                      },
+                      {
+                        "ReviewId": 2,
+                        "Name": "Roshan",
+                        "Email": "",
+                        "Rating": 4,
+                        "Date": "2021-08-01",
+                        "Review": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+                    },
+                    {
+                        "ReviewId": 3,
+                        "Name": "Sanam",
+                        "Email": "",
+                        "Rating": 2,
+                        "Date": "2021-08-01",
+                        "Review": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    }
+                    ]
           }
         ]
       }
@@ -156,6 +185,96 @@ const ProductPage = () => {
         </div>      
       </div>
      </div>
+     <div className='pc2'>{
+      showreview ?
+      <div className='tabs'>
+        <button className='inactive'
+        onClick={
+          () => {
+            setshowreview(false)
+          }
+        }
+        >
+          Description
+        </button>
+        <button className='active'
+         onClick={
+          () => {
+            setshowreview(true)
+          }
+        }
+        >
+          Reviews
+        </button>
+      </div>
+      :
+      <div className='tabs'>
+        <button className='active'
+         onClick={
+          () => {
+            setshowreview(false)
+          }
+        }
+        >
+          Description
+        </button>
+        <button className='inactive'
+         onClick={
+          () => {
+            setshowreview(true)
+          }
+        }
+        >
+          Reviews
+        </button>
+      </div>
+     }
+      {
+        showreview ?
+        <div className='reviewcont'>
+          <form>
+            <div className='fromgroup'>
+              <label htmlFor=''>Name</label>
+              <input type='text' />
+            </div>
+            <div className='fromgroup'>
+            <label htmlFor=''>Email</label>
+              <input type='email' />
+            </div>
+            <div className='fromfroup'>
+            <label htmlFor=''>Review</label>
+              <textarea name='' id='' cols="30" rows='10'></textarea>
+            </div>
+            <button>Submit</button>
+          </form>
+
+
+          <div className='allreview'>
+            <h1 className='head1'>Product Reviews</h1>
+            {productdata.ProductReviews &&
+             productdata.ProductReviews.map((item, index) => {
+              return (
+                <div className='review'>
+                <div className='reviewhead'>
+                <p className='name'>{item.Name}</p>
+                <span className='date'>{item.Date}</span>
+                </div>
+
+                <div className='reviewbody'>
+                  {item.Review}
+                </div>
+                </div>
+              )
+            }) 
+            }
+          </div>
+        </div>
+        :
+       <p className='desc'>{productdata.ProductDescription}</p>
+      }
+     </div>
+     <Footer1/>
+     <Footer2/>
     </div>
   )
 }
