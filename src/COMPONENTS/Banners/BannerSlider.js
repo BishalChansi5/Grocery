@@ -14,7 +14,7 @@ const BannerSlider = () => {
     const data = [
         {
             id:1,
-            image: img,
+            image: img1,
             title: 'Find Happiness With Us. Happy shopping!',
             description: 'Don’t worry. We have everything you need. We focus on what you need',
             button: 'https://www.google.com'
@@ -22,7 +22,7 @@ const BannerSlider = () => {
         },
         {
             id:2,
-            image: img1,
+            image: img,
             title: 'Find Happiness With Us. Happy shopping!',
             description: 'Don’t worry. We have everything you need. We focus on what you need',
             button: 'https://www.google.com'
