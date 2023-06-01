@@ -7,6 +7,9 @@ import './App.css'
 import ProductPage from './PAGES/Product/ProductPage'
 import About from './PAGES/Extra/About'
 import Contact from './PAGES/Extra/Contact'
+import Login from './PAGES/Auth/Login'
+import Singup from './PAGES/Auth/Singup'
+import ForgotPassword from './PAGES/Auth/ForgotPassword'
 const App = () => {
   return (
     
@@ -19,6 +22,9 @@ const App = () => {
       } />
       <Route path='/about' element={<About/>} />
       <Route path='/contact' element={<Contact/>} />
+      <Route path='/login' element={<Login/>} />
+      <Route path='/signup' element={<Singup/>} />
+      <Route path='/forgotpassword' element={<ForgotPassword/>} />
       <Route path='*' element={
         <div>
           <h1>404 NOT FOUND</h1>
