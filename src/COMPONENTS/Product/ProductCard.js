@@ -1,25 +1,74 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import './ProductCard.css'
-import { Link } from 'react-router-dom';
 
-const ProductCard = ({data}) => {
+const ProductCard = ({ data }) => {
+  const [show, setshow] = useState(false)
+  const [count, setCount] = useState(1)
 
-  const[show,setshow] = useState(false);
-  const[qty,setqty] = useState(1);
-  
+  // const getproductid = () => {
+  //   alert(data.id)
+  // }
+
+  const addtocart = () => {
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    let productdata = data
+    if (cart) {
+      // alert('1 item is already added to cart')
+      let itemincart = cart.find(item => item.productdata.ProductId === productdata.ProductId)
+      if (itemincart) {
+        cart = cart.map(item => {
+          if (item.productdata.ProductId === productdata.ProductId) {
+            return {
+              ...item,
+              quantity: item.quantity + count
+            }
+          }
+          else {
+            return item
+          }
+        })
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+      else {
+        cart = [
+          ...cart,
+          {
+            productdata,
+            quantity: count
+          }
+        ]
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+    }
+    else {
+      cart = [{
+        productdata,
+        quantity: count
+      }]
+
+      // console.log(cart)
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+    // setreloadnavbar(!reloadnavbar)
+    window.location.reload()
+    // toast.success('Item added to cart')
+
+  }
   return (
     <div className='product'>
         <div className='s1'>
-            <img src={data.productimage} alt='image' />
+            <img src={data.ProductImage[0].image} alt='image' />
         </div>
         <div className='s2'>
             <h3>Rs. {
-                data.productprice - (data.productprice * data.discountpercent / 100)
+                data.ProductPrice - (data.ProductPrice * data.ProductDiscount / 100)
             }
-                <span>Rs. {data.productprice}</span>
+                <span>Rs. {data.ProductPrice}</span>
             </h3>
             <p>
-              {data.productname}
+              {data.ProductName}
             </p>
         </div>
         <div className='s3'>
@@ -31,22 +80,22 @@ const ProductCard = ({data}) => {
            <div className='qty'>
             <button
             onClick={() =>{
-              if(qty > 1)
-               setqty(qty-1)
+              if(count > 1)
+               setCount(count-1)
             }
             
             }
             >-</button>
-            <p>{qty}</p>
+            <p>{count}</p>
             <button
-            onClick={() => setqty(qty+1)}
+            onClick={() => setCount(count+1)}
             >+</button>
             
            </div>
            <button className='addtocart'
             onClick={() => {
               setshow(false);
-              alert('Added To Cart');
+              addtocart()
             }}>
             Add <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />

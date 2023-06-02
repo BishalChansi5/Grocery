@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Singup = () => {
   return (
     <div className='authpage'>
-    <Navbar/>
+    <Navbar reloadnavbar={false}/>
     <div className='authcont'>
       <img src={img} alt='no image' />
 

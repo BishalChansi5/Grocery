@@ -10,6 +10,7 @@ import Contact from './PAGES/Extra/Contact'
 import Login from './PAGES/Auth/Login'
 import Singup from './PAGES/Auth/Singup'
 import ForgotPassword from './PAGES/Auth/ForgotPassword'
+import Cart from './PAGES/Cart/Cart'
 const App = () => {
   return (
     
@@ -25,6 +26,7 @@ const App = () => {
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<Singup/>} />
       <Route path='/forgotpassword' element={<ForgotPassword/>} />
+      <Route path='/cart' element={<Cart/>} />
       <Route path='*' element={
         <div>
           <h1>404 NOT FOUND</h1>

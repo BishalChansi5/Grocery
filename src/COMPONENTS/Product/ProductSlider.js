@@ -41,9 +41,9 @@ const ProductSlider = ({products,categoryname}) => {
        dotListClass="custom-dot-list-style"
        itemClass="carousel-item-padding-40-px"
         >
-         {products.map((item)=>{
+         {products.map((item,index)=>{
             return(
-                <ProductCard data={item} key={item.id} />
+                <ProductCard data={item} key={index} />
             )
          })}
         </Carousel>

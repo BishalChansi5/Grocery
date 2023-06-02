@@ -7,7 +7,7 @@ import img from '../../ASSETS/img8.jpg'
 const ForgotPassword = () => {
   return (
     <div className='authpage'>
-    <Navbar/>
+    <Navbar reloadnavbar={false} />
     <div className='authcont'>
       <img src={img} alt='no image' />
 
