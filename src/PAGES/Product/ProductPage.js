@@ -4,8 +4,14 @@ import { toast } from 'react-toastify'
 import img2 from '../../ASSETS/img(1).jpg'
 import img1 from '../../ASSETS/dairy1.jpg'
 import img3 from '../../ASSETS/dairy2.jpg'
-import img13 from '../../ASSETS/img(2).png'
-import img14 from '../../ASSETS/img(3).webp'
+import imgw1 from '../../ASSETS/waiwai.webp'
+import imgw2 from '../../ASSETS/wai1.webp'
+import imgo1 from '../../ASSETS/oreo1.jpeg'
+import imgo2 from '../../ASSETS/oreo.jpg'
+import imgr1 from '../../ASSETS/ramen.jpeg'
+import imgr2 from '../../ASSETS/ramen1.jpeg'
+import imgc1 from '../../ASSETS/c1.jpg'
+import imgc2 from '../../ASSETS/c2.jpeg'
 import img4 from '../../ASSETS/img(4).jpg'
 import img5 from '../../ASSETS/img(5).jpg'
 import img6 from '../../ASSETS/img(6).jpeg'
@@ -62,9 +68,9 @@ const ProductPage = () => {
                     "ProductMaterial": "Material 1",
                     "ProductQuantity": 10,
                     "ProductUnit": "Unit 1",
-                    "ProductPrice": 100,
-                    "SalesPrice": 80,
-                    "ProductDiscount": 20,
+                    "ProductPrice": 260,
+                    "SalesPrice": 239.2,
+                    "ProductDiscount": 8,
                     "ProductDiscountType": "Percentage",
                     "ProductTax": 20,
                     "ProductTaxType": "Percentage",
@@ -150,10 +156,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 260,
-                "SalesPrice": 80,
+                "SalesPrice": 239.2,
                 "ProductDiscount": 8,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -199,7 +205,7 @@ const ProductPage = () => {
         "ProductImage":[
           {
             id:1,
-            image : img2
+            image : imgw1
           },
           {
             id :2,
@@ -207,7 +213,7 @@ const ProductPage = () => {
           },
           {
              id:3,
-             image:img3
+             image:imgw2
           }
         ],
                 "ProductCode": "P1",
@@ -220,11 +226,11 @@ const ProductPage = () => {
                 "ProductMaterial": "Material 1",
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
-                "ProductPrice": 20,
-                "SalesPrice": 80,
-                "ProductDiscount": 0,
+                "ProductPrice": 380,
+                "SalesPrice": 349.6,
+                "ProductDiscount": 8,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -270,15 +276,15 @@ const ProductPage = () => {
         "ProductImage":[
           {
             id:1,
-            image : img3
+            image : imgo1
           },
           {
             id :2,
-            image:img2
+            image:img3
           },
           {
              id:3,
-             image:img3
+             image:imgo2
           }
         ],
                 "ProductCode": "P1",
@@ -292,10 +298,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 360,
-                "SalesPrice": 80,
+                "SalesPrice": 324,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -345,11 +351,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:imgr1
           },
           {
              id:3,
-             image:img3
+             image:imgr2
           }
         ],
                 "ProductCode": "P1",
@@ -363,10 +369,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 220,
-                "SalesPrice": 80,
+                "SalesPrice": 206.8,
                 "ProductDiscount": 6,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -416,11 +422,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:imgc1
           },
           {
              id:3,
-             image:img3
+             image:imgc2
           }
         ],
                 "ProductCode": "P1",
@@ -434,10 +440,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 380,
-                "SalesPrice": 80,
+                "SalesPrice": 342,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -487,11 +493,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img6
           },
           {
              id:3,
-             image:img3
+             image:img6
           }
         ],
                 "ProductCode": "P1",
@@ -505,10 +511,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 450,
-                "SalesPrice": 80,
+                "SalesPrice": 396,
                 "ProductDiscount": 12,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -558,11 +564,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img7
           },
           {
              id:3,
-             image:img3
+             image:img7
           }
         ],
                 "ProductCode": "P1",
@@ -576,10 +582,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 300,
-                "SalesPrice": 80,
+                "SalesPrice": 270,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -629,11 +635,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img8
           },
           {
              id:3,
-             image:img3
+             image:img8
           }
         ],
                 "ProductCode": "P1",
@@ -647,10 +653,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 200,
-                "SalesPrice": 80,
+                "SalesPrice": 180,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -700,11 +706,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img9
           },
           {
              id:3,
-             image:img3
+             image:img9
           }
         ],
                 "ProductCode": "P1",
@@ -718,10 +724,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 280,
-                "SalesPrice": 80,
+                "SalesPrice": 246.4,
                 "ProductDiscount": 12,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -771,11 +777,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img10
           },
           {
              id:3,
-             image:img3
+             image:img10
           }
         ],
                 "ProductCode": "P1",
@@ -789,10 +795,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 180,
-                "SalesPrice": 80,
+                "SalesPrice": 144,
                 "ProductDiscount": 20,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -842,11 +848,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img11
           },
           {
              id:3,
-             image:img3
+             image:img11
           }
         ],
                 "ProductCode": "P1",
@@ -860,10 +866,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 350,
-                "SalesPrice": 80,
+                "SalesPrice": 315,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
@@ -913,11 +919,11 @@ const ProductPage = () => {
           },
           {
             id :2,
-            image:img2
+            image:img12
           },
           {
              id:3,
-             image:img3
+             image:img12
           }
         ],
                 "ProductCode": "P1",
@@ -931,10 +937,10 @@ const ProductPage = () => {
                 "ProductQuantity": 10,
                 "ProductUnit": "Unit 1",
                 "ProductPrice": 180,
-                "SalesPrice": 80,
+                "SalesPrice": 162,
                 "ProductDiscount": 10,
                 "ProductDiscountType": "Percentage",
-                "ProductTax": 20,
+                "ProductTax": 8,
                 "ProductTaxType": "Percentage",
                 "ProductShippingCharge": 20,
                 "ProductShippingChargeType": "Percentage",
