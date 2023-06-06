@@ -3,12 +3,14 @@ import Navbar from '../../COMPONENTS/Navbar/Navbar'
 import Footer from '../../COMPONENTS/Footer/Footer'
 import Footer2 from '../../COMPONENTS/Footer/Footer2'
 import SingleBanner from '../../COMPONENTS/Banners/SingleBanner'
+import esewa from '../../ASSETS/esewa.png'
+import khalti from '../../ASSETS/k.png'
 import './Cart.css'
 import './Progress.css'
 import './CartContainer.css'
-// import './ShippingContainer.css'
-// import './PaymentContainer.css'
-// import './OrderSucessfull.css'
+import './ShippingContainer.css'
+import './PaymentContainer.css'
+import './OrderSuccessful.css'
 
 const Cart = () => {
     const [cartdata, setcartdata] = React.useState([])
@@ -16,6 +18,9 @@ const Cart = () => {
     const [shipping, setshipping] = React.useState(0)
     const [active, setactive] = React.useState(1)
     const [tax, settax] = React.useState(0)
+    const [deliverydate, setdeliverydate] = React.useState(
+    new Date(new Date().getTime() + 0 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+  )
 
     const getcartitemsfromlocalstorage = () => {
         let cart = JSON.parse(localStorage.getItem('cart'))
@@ -55,6 +60,19 @@ const Cart = () => {
         localStorage.setItem('cart', JSON.stringify(temp))
         getcartitemsfromlocalstorage()
       }
+
+      const savedaddress = [
+        {
+          Address: "Tokha-03, Kathmandu",
+          Contact : "9813645615",
+          Street: "Tokha gate, Lachi"
+        },
+        {
+          Address: "MadhyapurThimi-08,Bhaktapur",
+          Contact: "9842458416",
+          Street: "Chardo bato, Opposite North Mall"
+        }
+      ]
   return (
     <div>
         <Navbar reloadnavbar={reloadnavbar}/>
@@ -314,23 +332,95 @@ const Cart = () => {
             }
           </div>
         }    
-        {
-             active == 2 &&
-             <div className='shippingcont'>
-               <p>Shipping Cont</p>  
-             </div>
+         {
+          active == 2 &&
+          <div className='shippingcont'>
+            <div className='selectdate'>
+              <h2 className='mainhead1'>Select Delivery Date</h2>
+              <input
+                min={new Date(new Date().getTime() + 0 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
+                type='date'
+                value={deliverydate}
+                onChange={(e) => {
+                  setdeliverydate(e.target.value)
+                }}
+              />
+            </div>
+            <div className='previous'>
+              <h2 className='mainhead1'>Previous Saved Address</h2>
+              {
+                savedaddress.length > 0 ?
+                  savedaddress.map((item, index) => {
+                    return (
+                      <div className='radio' key={index}>
+                        <input type='radio' name='address' id={index} />
+                        <span>
+                          {
+                            item.Street +' , ' + item.Address +  ', ' + item.Contact
+                          }
+                        </span>
+                      </div>
+                    )
+                  })
+                  :
+                  <div className='emptyaddress'>
+                    <p>No address Found</p>
+                  </div>
+              }
+            </div>
+            <h3>OR</h3>
+            <div className='shippingadd'>
+              <input type='text' placeholder='Address' />
+              <input type='text' placeholder='Street' />
+              <input type='text' placeholder='Contact' />
+              <button>Save</button>
+            </div>
+
+          </div>
         }
          {
              active == 3  &&
              <div className='paymentcont'>
-               <p>Payment Cont</p>  
+                 <h2 className='mainhead1'>Select Payment Method</h2>
+            <div className='paymenttypes'>
+              <div className='c1'>
+                <input type='radio' name='payment' id='payment1' />
+                <img src= {esewa}
+                  alt='Esewa'
+                />
+              </div>
+              <div className='c1'>
+                <input type='radio' name='payment' id='payment1' />
+                <img src={khalti}
+                  alt='Khalti'
+                />
+              </div>
+              </div>
+              <div
+              className='paymentagreement'
+            >
+              <input type='checkbox' name='agreement' id='agreement' />
+              <label htmlFor='agreement'>I agree to the terms and conditions</label>
+            </div>
+
+            <div className='c2'>
+              <span>Net Total</span>
+              &nbsp;&nbsp;
+              <span>Rs. {(subtotal + tax + shipping).toFixed(2)}</span>
+            </div>
              </div>
         }
-        {
-             active == 4  &&
-             <div className='ordersuccessfull'>
-               <p>Order Successfull</p>  
-             </div>
+         {
+          active == 4 &&
+          <div className='ordersuccessfull'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+            </svg>
+
+            <h2 className='mainhead1'>Order Placed Successfully</h2>
+            <p>Thank you for shopping with us</p>
+            <span>Order ID : 12345</span>
+          </div>
         }
 
         {
@@ -385,7 +475,7 @@ const Cart = () => {
                  <div className='btns'>
                   <button className='nextbtn'
                    onClick={() => {
-                    alert('Order Placed Successfull')
+                    window.location.href='/'
                   }}
                   >Go To Home</button>
                 </div>

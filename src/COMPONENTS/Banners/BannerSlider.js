@@ -87,7 +87,7 @@ const BannerSlider = () => {
             data.map(item=>{
                 return(
                     <div className='imagecont' key={item.id}>
-                        <img src={item.image}  alt='noting'/>
+                        <img src={item.image}  alt='noting' loading='priority'/>
                         <div className='content'>
                             <h1>{item.title}</h1>
                             <span>{item.description}</span>
