@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../COMPONENTS/Navbar/Navbar'
 import SingleBanner from '../../COMPONENTS/Banners/SingleBanner'
 import img from '../../ASSETS/img7.jpg'
@@ -7,6 +7,9 @@ import Footer from '../../COMPONENTS/Footer/Footer'
 import Footer2 from '../../COMPONENTS/Footer/Footer2'
 import './Extrapages.css'
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className='extrapage'>
         <Navbar reloadnavbar={false}/>

@@ -94,9 +94,9 @@ const Navbar = ({reloadnavbar}) => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">FAQ</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Terms & Condition</Dropdown.Item>
+        <Dropdown.Item href="/FAQ">FAQ</Dropdown.Item>
+        <Dropdown.Item href="/PrivacyPolicy">Privacy Policy</Dropdown.Item>
+        <Dropdown.Item href="/Termsandconditions">Terms & Condition</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
         </div>
