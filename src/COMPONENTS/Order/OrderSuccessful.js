@@ -8,11 +8,11 @@ const OrderSuccessful = ({ orderid, message, redirecto }) => {
     const [ordersuccesscont, setordersuccesscont] = useRecoilState(orderSuccessfulProvider)
     const [orderdata, setorderdata] = useState({
         OrderNo: orderid,
-        OrderDate: '12/12/2021',
+        OrderDate: '12/12/2022',
         OrderStatus: 'Delivered',
-        CustomerName: 'Harshal Jain',
-        CustomerShipToAddress: 'B-101, Shreeji Apartment, Near Shreeji Hospital, Kalyan West, Thane, Maharashtra 421301',
-        CustomerEmail: 'virajj014@gmail.com',
+        CustomerName: 'Bishal Chansi',
+        CustomerShipToAddress:'Tokha-03,Kathmandu',
+        CustomerEmail: 'bishal@gmail.com',
         OrderItems: [
             {
                 ProductName: 'Product 1',
@@ -140,9 +140,9 @@ const OrderSuccessful = ({ orderid, message, redirecto }) => {
                                                 <p>{index + 1}</p>
                                             </td>
                                             <td><p>{item.ProductName}</p></td>
-                                            <td><p>${item.Price}</p></td>
+                                            <td><p>Rs.{item.Price}</p></td>
                                             <td><p>{item.Quantity}</p></td>
-                                            <td><p>${item.Price * item.Quantity}</p></td>
+                                            <td><p>Rs.{item.Price * item.Quantity}</p></td>
                                         </tr>
                                     )
                                 })
